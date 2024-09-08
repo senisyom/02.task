@@ -44,6 +44,30 @@
 
         )};
 
+        const Content = ({firstElement, secondElement, thirdElement, fourElement}) => {
+
+            return(
+        <section class="clearfix section3">
+            <div class="container middle">
+                <img src="/02.task/images/photo (1).png" alt="" class="middle"/>
+                <h2>{firstElement}</h2>
+                <p> {secondElement}</p>
+                <p>{thirdElement} </p>
+                <p>{fourElement}</p>
+            </div>
+        </section>
+
+        )}
+
+        const Footer = ({div}) => {
+            return(
+                 <footer class="footer">
+                     <div class="container-foot">
+                         <div class="footer-div">{div}</div>
+                     </div>
+                 </footer>
+            )
+        }
 
             const headerData = {
             firstDiv: 'База новостроек от застройщиков без посредников и переплат',
@@ -57,12 +81,26 @@
             fourLi: 'События и мнения',
             fiveLi: 'Поиск по карте',
                 };
+                
+            const contentData = {
+                firstElement: "Описание жилого комплекса 'Graff Суворов'",
+                secondElement: "Жилой комплекс 'Суворов' в Краснодаре будет представлен многоэтажным жилым домом Бизнес класса. Дом имеет монолитно-железобетонный каркас с заполнениями из пенобетонных блоков.",
+                thirdElement: "Квартиры в ЖК 'Суворов' обладают высокими потолками и сдаются подготовленными под отделку Комфортабельные планировочные решения жилых площадей позволят воплотить в реальность самые смелые замыслы по обустройству интерьера.",
+                fourElement:"К жилому дому предусмотрен обустроенный подход и подъезд с пешеходным бульваром и ландшафтным озеленением. Под территорией двора предусмотрена подземная парковка для транспортных средств. На первом этаже запроектированы помещения коммерческого назначения.",
+            };
+
+            const footerData = {
+                div: "Россия, г.Краснодар, ул.Октябрьская 59, 6 этаж ©Yuga-Build.Ru Единый call-центр"
+            };
+
 
             const content = (
             <div>
                 <Header firstDiv={headerData.firstDiv} secondDiv={headerData.secondDiv} />
                 <Section firstLi={sectionData.firstLi} secondLi={sectionData.secondLi} thirdLi={sectionData.thirdLi}
                     fourLi={sectionData.fourLi} fiveLi={sectionData.fiveLi} />
+                <Content firstElement={contentData.firstElement} secondElement={contentData.secondElement} thirdElement={contentData.thirdElement} fourElement={contentData.fourElement}/>
+                <Footer div={footerData.div}/>
             </div>
             );
 
