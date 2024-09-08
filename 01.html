@@ -5,6 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -12,8 +16,61 @@
 </head>
 
 <body>
-<script type="text/babel">
+    <div id="app"></div>
+
+
+    <script type="text/babel">
+
+        const Header = ({firstDiv, secondDiv}) => {
+            return (
+                <div className = "header">
+                    <img src="/02.task/images/main-logo.png" alt="Main Logo"/>
+                    <div>{firstDiv}</div>
+                    <div>{secondDiv}</div>
+                </div>
+            )};
+
+        const Section = ({firstLi, secondLi, thirdLi, fourLi, fiveLi}) => {
+            return(
+            <div class="container container2 main-nav">
+            <ul>
+                <li>{firstLi}</li>
+                <li>{secondLi}</li>
+                <li>{thirdLi}</li>
+                <li>{fourLi}</li>
+                <li>{firstLi}</li>
+            </ul>
+            </div>
+
+        )};
+
+
+            const headerData = {
+            firstDiv: 'База новостроек от застройщиков без посредников и переплат',
+            secondDiv: '8 800 250-90-03 Звонок бесплатный',
+            };
+
+            const sectionData = {
+            firstLi: 'Новостройки по городам',
+            secondLi: 'Земельные участки',
+            thirdLi: 'Застройщики по городам',
+            fourLi: 'События и мнения',
+            fiveLi: 'Поиск по карте',
+                };
+
+            const content = (
+            <div>
+                <Header firstDiv={headerData.firstDiv} secondDiv={headerData.secondDiv} />
+                <Section firstLi={sectionData.firstLi} secondLi={sectionData.secondLi} thirdLi={sectionData.thirdLi}
+                    fourLi={sectionData.fourLi} fiveLi={sectionData.fiveLi} />
+            </div>
+            );
+
+ 
     
+
+    ReactDOM.render(content, document.getElementById('app'));
+
 </script>
 </body>
 
