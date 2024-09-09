@@ -17,10 +17,7 @@
 
 <body>
     <div id="app"></div>
-    
-    
     <script type="text/babel">
-
         class Header extends React.Component {
             render() {
                 const { firstDiv, secondDiv } = this.props;
@@ -35,15 +32,15 @@
             
             class Section extends React.Component {
                 render() {
-                    const { firstLi, secondLi, thirdLi, fourLi, fiveLi } = this.props;
+                    const {firstLi, secondLi, thirdLi, fourLi, fiveLi} = this.props;
                     return (
                     <div className="container container2 main-nav">
                         <ul>
-                            <li>{firstLi}</li>
-                            <li>{secondLi}</li>
-                            <li>{thirdLi}</li>
-                            <li>{fourLi}</li>
-                            <li>{fiveLi}</li>
+                            <li><a>{firstLi}</a></li>
+                            <li><a>{secondLi}</a></li>
+                            <li><a>{thirdLi}</a></li>
+                            <li><a>{fourLi}</a></li>
+                            <li><a>{fiveLi}</a></li>
                         </ul>
                     </div>
                     );
