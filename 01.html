@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
+    rel="stylesheet">
     <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -17,99 +17,103 @@
 
 <body>
     <div id="app"></div>
-
-
+    
+    
     <script type="text/babel">
 
-        const Header = ({firstDiv, secondDiv}) => {
-            return (
-                <div className = "header">
-                    <img src="/02.task/images/main-logo.png" alt="Main Logo"/>
+        class Header extends React.Component {
+            render() {
+                const { firstDiv, secondDiv } = this.props;
+                return (
+                <div className="header">
+                    <img src="/02.task/images/main-logo.png" alt="Main Logo" />
                     <div>{firstDiv}</div>
                     <div>{secondDiv}</div>
                 </div>
-            )};
-
-        const Section = ({firstLi, secondLi, thirdLi, fourLi, fiveLi}) => {
-            return(
-            <div class="container container2 main-nav">
-            <ul>
-                <li>{firstLi}</li>
-                <li>{secondLi}</li>
-                <li>{thirdLi}</li>
-                <li>{fourLi}</li>
-                <li>{firstLi}</li>
-            </ul>
-            </div>
-
-        )};
-
-        const Content = ({firstElement, secondElement, thirdElement, fourElement}) => {
-
-            return(
-        <section class="clearfix section3">
-            <div class="container middle">
-                <img src="/02.task/images/photo (1).png" alt="" class="middle"/>
-                <h2>{firstElement}</h2>
-                <p> {secondElement}</p>
-                <p>{thirdElement} </p>
-                <p>{fourElement}</p>
-            </div>
-        </section>
-
-        )}
-
-        const Footer = ({div}) => {
-            return(
-                 <footer class="footer">
-                     <div class="container-foot">
-                         <div class="footer-div">{div}</div>
-                     </div>
-                 </footer>
-            )
-        }
-
+                )}
+            }
+            
+            class Section extends React.Component {
+                render() {
+                    const { firstLi, secondLi, thirdLi, fourLi, fiveLi } = this.props;
+                    return (
+                    <div className="container container2 main-nav">
+                        <ul>
+                            <li>{firstLi}</li>
+                            <li>{secondLi}</li>
+                            <li>{thirdLi}</li>
+                            <li>{fourLi}</li>
+                            <li>{fiveLi}</li>
+                        </ul>
+                    </div>
+                    );
+                }
+            }
+            
+            class Content extends React.Component {
+                render() {
+                    const { firstElement, secondElement, thirdElement, fourElement } = this.props;
+                    return (
+                    <section className="clearfix section3">
+                        <div className="container middle">
+                            <img src="/02.task/images/photo (1).png" alt="" className="middle" />
+                            <h2>{firstElement}</h2>
+                            <p>{secondElement}</p>
+                            <p>{thirdElement}</p>
+                            <p>{fourElement}</p>
+                        </div>
+                    </section>
+                    );
+                }
+            }
+            
+            class Footer extends React.Component {
+                render() {
+                    const { div } = this.props;
+                    return (
+                    <footer className="footer">
+                        <div className="container-foot">
+                            <div className="footer-div">{div}</div>
+                        </div>
+                    </footer>
+                    );
+                }
+            }
+            
             const headerData = {
-            firstDiv: 'База новостроек от застройщиков без посредников и переплат',
-            secondDiv: '8 800 250-90-03 Звонок бесплатный',
+                firstDiv: 'База новостроек от застройщиков без посредников и переплат',
+                secondDiv: '8 800 250-90-03 Звонок бесплатный',
             };
-
+            
             const sectionData = {
-            firstLi: 'Новостройки по городам',
-            secondLi: 'Земельные участки',
-            thirdLi: 'Застройщики по городам',
-            fourLi: 'События и мнения',
-            fiveLi: 'Поиск по карте',
-                };
-                
+                firstLi: 'Новостройки по городам',
+                secondLi: 'Земельные участки',
+                thirdLi: 'Застройщики по городам',
+                fourLi: 'События и мнения',
+                fiveLi: 'Поиск по карте',
+            };
+            
             const contentData = {
                 firstElement: "Описание жилого комплекса 'Graff Суворов'",
                 secondElement: "Жилой комплекс 'Суворов' в Краснодаре будет представлен многоэтажным жилым домом Бизнес класса. Дом имеет монолитно-железобетонный каркас с заполнениями из пенобетонных блоков.",
                 thirdElement: "Квартиры в ЖК 'Суворов' обладают высокими потолками и сдаются подготовленными под отделку Комфортабельные планировочные решения жилых площадей позволят воплотить в реальность самые смелые замыслы по обустройству интерьера.",
                 fourElement:"К жилому дому предусмотрен обустроенный подход и подъезд с пешеходным бульваром и ландшафтным озеленением. Под территорией двора предусмотрена подземная парковка для транспортных средств. На первом этаже запроектированы помещения коммерческого назначения.",
             };
-
+            
             const footerData = {
                 div: "Россия, г.Краснодар, ул.Октябрьская 59, 6 этаж ©Yuga-Build.Ru Единый call-центр"
             };
-
-
+            
             const content = (
             <div>
                 <Header firstDiv={headerData.firstDiv} secondDiv={headerData.secondDiv} />
                 <Section firstLi={sectionData.firstLi} secondLi={sectionData.secondLi} thirdLi={sectionData.thirdLi}
-                    fourLi={sectionData.fourLi} fiveLi={sectionData.fiveLi} />
+                fourLi={sectionData.fourLi} fiveLi={sectionData.fiveLi} />
                 <Content firstElement={contentData.firstElement} secondElement={contentData.secondElement} thirdElement={contentData.thirdElement} fourElement={contentData.fourElement}/>
                 <Footer div={footerData.div}/>
             </div>
             );
-
- 
-    
-
-    ReactDOM.render(content, document.getElementById('app'));
-
-</script>
-</body>
-
-</html>
+            ReactDOM.render(content, document.getElementById('app'));
+        </script>
+    </body>
+    </html>
